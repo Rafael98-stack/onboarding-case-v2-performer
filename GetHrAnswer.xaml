@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetHrAnswer" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,1800" sap2010:WorkflowViewState.IdRef="GetHrAnswer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetHrAnswer" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1082,2379" sap2010:WorkflowViewState.IdRef="GetHrAnswer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>GlobalConstantsNamespace</x:String>
@@ -47,6 +47,8 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.Vision.OCR</x:String>
       <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -118,9 +120,12 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetHrAnswer" sap:VirtualizedContainerService.HintSize="608,1735" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetHrAnswer" sap:VirtualizedContainerService.HintSize="784,2314" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="ConfirmedCandidates" />
     </Sequence.Variables>
@@ -129,8 +134,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Top="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="iacopo.depalatis@acpsystem.eu" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="inbox.CandidatureTestProgetto" MarkAsRead="False" Messages="[ConfirmedCandidates]" OnlyUnreadMessages="True" OrderByDate="OldestFirst" Password="AcpDepa01@@" Port="993" SecureConnection="Auto" Server="imaps.aruba.it" UseOAuth="False" />
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each (ForEach)" sap:VirtualizedContainerService.HintSize="546,392" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ConfirmedCandidates]">
+    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Top="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="iacopo.depalatis@acpsystem.eu" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="722,57" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="inbox.CandidatureTestProgetto" MarkAsRead="False" Messages="[ConfirmedCandidates]" OnlyUnreadMessages="True" OrderByDate="OldestFirst" Password="AcpDepa01@@" Port="993" SecureConnection="Auto" Server="imaps.aruba.it" UseOAuth="False" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each (ForEach)" sap:VirtualizedContainerService.HintSize="722,392" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ConfirmedCandidates]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
@@ -150,7 +155,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="downloads" sap:VirtualizedContainerService.HintSize="546,1198" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="LastUpdatedDateOldFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="downloads" sap:VirtualizedContainerService.HintSize="722,1777" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="LastUpdatedDateOldFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -159,7 +164,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,917" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,1496" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="PdfText" />
               <Variable x:TypeArguments="ui:Image" Name="FileImage" />
@@ -169,7 +174,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="626,114" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[PdfText]</OutArgument>
               </Assign.To>
@@ -179,7 +184,7 @@
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[CurrentFile.FullName.Contains(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="450,610" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[CurrentFile.FullName.Contains(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="626,1189" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
@@ -191,18 +196,54 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="592,829" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LoadImage DisplayName="Load Image" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="354,117" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[FileImage]" />
-                  <p:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" UseLocalServer="{x:Null}" ApiKey="IRBbOXIWjqJAclUHEMRs1ynQedk7Gl13gj+veetshC1zinvGSdUngC8P1GsKRYJcnfE3M+RAyBijtJzYqv8Hdw==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[FileImage]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Text="[PdfText]" Timeout="100000" />
+                  <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Output" sap:VirtualizedContainerService.HintSize="530,696" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+                    <p:WordApplicationScope.Body>
+                      <ActivityAction x:TypeArguments="ui:WordDocument">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,554" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <p:WordAddImage Bookmark="{x:Null}" OccurrenceIndex="{x:Null}" Text="{x:Null}" DisplayName="Add Picture" sap:VirtualizedContainerService.HintSize="434,221" sap2010:WorkflowViewState.IdRef="WordAddImage_1" ImagePath="[CurrentFile.FullName]" InsertRelativeTo="Document" Position="Start" />
+                          <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="WordExportToPdf_1" />
+                          <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" Range="All" Text="[PdfText]" />
+                        </Sequence>
+                      </ActivityAction>
+                    </p:WordApplicationScope.Body>
+                  </p:WordApplicationScope>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LoadImage DisplayName="Load Image" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="354,117" sap2010:WorkflowViewState.IdRef="LoadImage_1" Image="[FileImage]" />
+                        <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" UseLocalServer="{x:Null}" ApiKey="IRBbOXIWjqJAclUHEMRs1ynQedk7Gl13gj+veetshC1zinvGSdUngC8P1GsKRYJcnfE3M+RAyBijtJzYqv8Hdw==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[FileImage]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Text="[PdfText]" Timeout="100000" />
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
                 </Sequence>
               </If.Else>
             </If>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[PdfText]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="626,108" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[PdfText]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachFileX.Body>
