@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1082.4,1102.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,1208" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="512,1037.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="512,1143" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="ArubaCredentials" />
       <Variable x:TypeArguments="sd:DataTable" Name="Dt_Candidates_Extracted" />
@@ -125,28 +125,139 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Flowchart GetCandidates Queue - Invoke Workflow File (Flowchart GetCandidates Queue.xaml)" sap:VirtualizedContainerService.HintSize="449.6,145.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Flowchart GetCandidates Queue.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Flowchart GetCandidates Queue - Invoke Workflow File (Flowchart GetCandidates Queue.xaml)" sap:VirtualizedContainerService.HintSize="450,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Flowchart GetCandidates Queue.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="Out_Dt_Candidates">[Dt_Candidates_Extracted]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[ArubaCredentials]" CredentialName="UiPath: GmailCredentials" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password for logging in to GMAIL" sap:VirtualizedContainerService.HintSize="449.6,210.4" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[Dt_Candidates_Extracted]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="449.6,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Candidati" WorkbookPath="Output\CandidateExtracted.xlsx" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Dt_Candidates_Extracted]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="449.6,444.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[ArubaCredentials]" CredentialName="UiPath: GmailCredentials" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password for logging in to GMAIL" sap:VirtualizedContainerService.HintSize="450,207" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[Dt_Candidates_Extracted]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Candidati" WorkbookPath="Output\CandidateExtracted.xlsx" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Dt_Candidates_Extracted]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="450,555" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentCandidate" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,256" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,368" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Il Seguente Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString  + CurrentCandidate(&quot;Cognome&quot;).ToString + CurrentCandidate(&quot;Eta&quot;).ToString + CurrentCandidate(&quot;Email&quot;).ToString + CurrentCandidate(&quot;Numero&quot;).ToString + CurrentCandidate(&quot;Posizione&quot;).ToString + CurrentCandidate(&quot;Voto&quot;).ToString]" DisplayName="Send SMTP Mail Message with Gmail" Email="[ArubaCredentials.Username]" EnableSSL="True" From="[ArubaCredentials.Username]" sap:VirtualizedContainerService.HintSize="353.6,169.6" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Name="Rafael" Password="[ArubaCredentials.Password]" Port="465" SecureConnection="Auto" Server="smtps.aruba.it" Subject="[&quot;Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString + CurrentCandidate(&quot;Cognome&quot;).ToString]" To="iacopo.depalatis@acpsystem.eu">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,133" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[CurrentCandidate(&quot;Nome&quot;).ToString.ToLower = &quot;iacopo&quot;]" DisplayName="If Candidate is iacopo" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Il Seguente Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Cognome&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Eta&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Email&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Numero&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Posizione&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Voto&quot;).ToString]" DisplayName="Send SMTP Mail Message with Gmail" Email="[ArubaCredentials.Username]" EnableSSL="True" From="[ArubaCredentials.Username]" sap:VirtualizedContainerService.HintSize="354,169" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="False" Name="Rafael" Password="[ArubaCredentials.Password]" Port="465" SecureConnection="Auto" Server="smtps.aruba.it" Subject="[&quot;Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString + CurrentCandidate(&quot;Cognome&quot;).ToString]" To="iacopo.depalatis@acpsystem.eu">
+                          <ui:SendMail.Files>
+                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String">C:\Users\rafae\OneDrive\Documenti\UiPath\Projects\onborading-performer-test\Attachment\CartaIdentita</Literal>
+                              </InArgument>
+                            </scg:List>
+                          </ui:SendMail.Files>
+                        </ui:SendMail>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,133" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[CurrentCandidate(&quot;Nome&quot;).ToString.ToLower = &quot;rafael&quot;]" DisplayName="If Candidate is rafael" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,133" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Il Seguente Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Cognome&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Eta&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Email&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Numero&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Posizione&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Voto&quot;).ToString]" DisplayName="Send SMTP Mail Message with Gmail" Email="[ArubaCredentials.Username]" EnableSSL="True" From="[ArubaCredentials.Username]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" Name="Rafael" Password="[ArubaCredentials.Password]" Port="465" SecureConnection="Auto" Server="smtps.aruba.it" Subject="[&quot;Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString + CurrentCandidate(&quot;Cognome&quot;).ToString]" To="iacopo.depalatis@acpsystem.eu">
+                          <ui:SendMail.Files>
+                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                          </ui:SendMail.Files>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:SendMail>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Il Seguente Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Cognome&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Eta&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Email&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Numero&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Posizione&quot;).ToString + &quot; &quot; + CurrentCandidate(&quot;Voto&quot;).ToString]" DisplayName="Send SMTP Mail Message with Gmail" Email="[ArubaCredentials.Username]" EnableSSL="True" From="[ArubaCredentials.Username]" sap:VirtualizedContainerService.HintSize="354,169" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Name="Rafael" Password="[ArubaCredentials.Password]" Port="465" SecureConnection="Auto" Server="smtps.aruba.it" Subject="[&quot;Candidato: &quot; + CurrentCandidate(&quot;Nome&quot;).ToString + CurrentCandidate(&quot;Cognome&quot;).ToString]" To="iacopo.depalatis@acpsystem.eu">
               <ui:SendMail.Files>
-                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String">C:\Users\rafae\OneDrive\Documenti\UiPath\Projects\onborading-performer-test\Attachment\CartaIdentita.pdf</Literal>
+                  </InArgument>
+                </scg:List>
               </ui:SendMail.Files>
             </ui:SendMail>
           </Sequence>
