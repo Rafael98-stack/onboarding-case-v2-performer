@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1498,2133</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410.4,3268.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NotPdfFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,7 +110,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="NotPdfFile" sap:VirtualizedContainerService.HintSize="558,2068" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="NotPdfFile" sap:VirtualizedContainerService.HintSize="558.4,3204" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OutputFile" />
       <Variable x:TypeArguments="x:String" Name="FileContent" />
@@ -122,7 +122,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="496,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="496,112.8" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[OutputFile]</OutArgument>
       </Assign.To>
@@ -130,18 +130,18 @@
         <InArgument x:TypeArguments="x:String">["towork\"+ Counter.ToString +".pdf"]</InArgument>
       </Assign.Value>
     </Assign>
-    <uia:ImageToPDF ImagesFolder="{x:Null}" DisplayName="Image To PDF" sap:VirtualizedContainerService.HintSize="496,165" sap2010:WorkflowViewState.IdRef="ImageToPDF_1" ImageFile="[in_NotPdfFile]" OutputFile="[OutputFile]" Overwrite="True" />
-    <ui:ReadPDFWithOCR DegreeOfParallelism="-1" DisplayName="Read PDF With OCR" FileName="[OutputFile]" sap:VirtualizedContainerService.HintSize="496,189" sap2010:WorkflowViewState.IdRef="ReadPDFWithOCR_1" ImageDpi="150" Range="All" Text="[FileContent]">
+    <uia:ImageToPDF ImagesFolder="{x:Null}" DisplayName="Image To PDF" sap:VirtualizedContainerService.HintSize="496,166.4" sap2010:WorkflowViewState.IdRef="ImageToPDF_1" ImageFile="[in_NotPdfFile]" OutputFile="[OutputFile]" Overwrite="True" />
+    <ui:ReadPDFWithOCR DegreeOfParallelism="-1" DisplayName="Read PDF With OCR" FileName="[OutputFile]" sap:VirtualizedContainerService.HintSize="496,189.6" sap2010:WorkflowViewState.IdRef="ReadPDFWithOCR_1" ImageDpi="150" Range="All" Text="[FileContent]">
       <ui:ReadPDFWithOCR.OCREngine>
         <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
           <ActivityFunc.Argument>
             <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
           </ActivityFunc.Argument>
-          <p:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="IRBbOXIWjqJAclUHEMRs1ynQedk7Gl13gj+veetshC1zinvGSdUngC8P1GsKRYJcnfE3M+RAyBijtJzYqv8Hdw==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[Image]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" />
+          <p:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="IRBbOXIWjqJAclUHEMRs1ynQedk7Gl13gj+veetshC1zinvGSdUngC8P1GsKRYJcnfE3M+RAyBijtJzYqv8Hdw==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[Image]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" />
         </ActivityFunc>
       </ui:ReadPDFWithOCR.OCREngine>
     </ui:ReadPDFWithOCR>
-    <Assign sap:VirtualizedContainerService.HintSize="496,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="496,112.8" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[FileContent]</OutArgument>
       </Assign.To>
@@ -149,18 +149,18 @@
         <InArgument x:TypeArguments="x:String">[FileContent.ToLower]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,173" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[FileContent]" />
-    <Sequence DisplayName="Get Name Sequence" sap:VirtualizedContainerService.HintSize="496,57" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[FileContent]" />
+    <Sequence DisplayName="Get Name Sequence" sap:VirtualizedContainerService.HintSize="496,1186.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[FileContent]" sap:VirtualizedContainerService.HintSize="434,304" sap2010:WorkflowViewState.IdRef="TextToLeftRight_1" Separator="luogo" SeparatorKey="Custom" TextToLeft="[Name]" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Name]" />
-      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[Name]" sap:VirtualizedContainerService.HintSize="434,304" sap2010:WorkflowViewState.IdRef="TextToLeftRight_2" Separator="/name" SeparatorKey="Custom" TextToRight="[Name]" />
-      <Assign sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[FileContent]" sap:VirtualizedContainerService.HintSize="433.6,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_1" Separator="luogo" SeparatorKey="Custom" TextToLeft="[Name]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Name]" />
+      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[Name]" sap:VirtualizedContainerService.HintSize="433.6,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_2" Separator="/ name" SeparatorKey="Custom" TextToRight="[Name]" />
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[out_Name]</OutArgument>
         </Assign.To>
@@ -168,33 +168,11 @@
           <InArgument x:TypeArguments="x:String">[Name.trimstart.trimend]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Name]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Name]" />
     </Sequence>
-    <Sequence DisplayName="Get Surname Sequence" sap:VirtualizedContainerService.HintSize="496,1006" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Get Surname Sequence" sap:VirtualizedContainerService.HintSize="496,56.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="Surname" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[FileContent]" sap:VirtualizedContainerService.HintSize="434,304" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="nome/" SeparatorKey="Custom" TextToLeft="[Surname]" />
-      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[Surname]" sap:VirtualizedContainerService.HintSize="434,304" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="isurname" SeparatorKey="Custom" TextToRight="[Surname]" />
-      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[out_Surname]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[Surname.trimstart.TrimEnd]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[Surname]" />
-    </Sequence>
-    <Sequence DisplayName="Get Birth Sequence" sap:VirtualizedContainerService.HintSize="496,57" sap2010:WorkflowViewState.IdRef="Sequence_4">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="Birth" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -202,9 +180,31 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[FileContent]" sap:VirtualizedContainerService.HintSize="434,304" sap2010:WorkflowViewState.IdRef="TextToLeftRight_5" Separator="sesso" SeparatorKey="Custom" TextToLeft="[Birth]" />
-      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[Birth]" sap:VirtualizedContainerService.HintSize="434,304" sap2010:WorkflowViewState.IdRef="TextToLeftRight_6" Separator=")" SeparatorKey="Custom" TextToRight="[Birth]" />
-      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[FileContent]" sap:VirtualizedContainerService.HintSize="433.6,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="2z56" SeparatorKey="Custom" TextToLeft="[Surname]" />
+      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[Surname]" sap:VirtualizedContainerService.HintSize="433.6,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="isurname" SeparatorKey="Custom" TextToRight="[Surname]" />
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[out_Surname]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Surname.trimstart.TrimEnd]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[Surname]" />
+    </Sequence>
+    <Sequence DisplayName="Get Birth Sequence" sap:VirtualizedContainerService.HintSize="496,1012" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="Birth" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:TextToLeftRight TextToRight="{x:Null}" DisplayName="Text to Left/Right" FullText="[FileContent]" sap:VirtualizedContainerService.HintSize="433.6,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_5" Separator="sesso" SeparatorKey="Custom" TextToLeft="[Birth]" />
+      <ui:TextToLeftRight TextToLeft="{x:Null}" DisplayName="Text to Left/Right" FullText="[Birth]" sap:VirtualizedContainerService.HintSize="433.6,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_6" Separator="(rm)" SeparatorKey="Custom" TextToRight="[Birth]" />
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,112.8" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[out_Birth]</OutArgument>
         </Assign.To>
@@ -212,9 +212,9 @@
           <InArgument x:TypeArguments="x:String">[Birth.TrimStart.TrimEnd]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[Name]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[Birth]" />
     </Sequence>
-    <Assign sap:VirtualizedContainerService.HintSize="496,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="496,104" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[Counter]</OutArgument>
       </Assign.To>
